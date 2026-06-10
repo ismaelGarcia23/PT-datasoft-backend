@@ -1,0 +1,22 @@
+services:
+  datasoft-db:
+    image: gvenzl/oracle-free:23-slim
+    container_name: datasoft-db
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: oracle
+      APP_USER: datasoft
+      APP_USER_PASSWORD: datasoft
+    volumes:
+
+      - ./db/init.sql:/container-entrypoint-initdb.d/init.sql
+      - datasoft-db-data:/opt/oracle/oradata
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  datasoft-db-data:
