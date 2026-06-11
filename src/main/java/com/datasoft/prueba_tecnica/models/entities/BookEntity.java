@@ -24,6 +24,10 @@ public class BookEntity {
     @Column(precision = 6, scale = 2, nullable = false)
     private BigDecimal price;
 
+    @Column(length = 3, nullable = false)
+    @Builder.Default
+    private String state = "ACT";
+
     @Column(columnDefinition = "TEXT")
     private  String image;
 
