@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,7 @@ public class GenereController {
 
     @GetMapping
     @Operation(summary = "Listar géneros", description = "Retorna todos los géneros paginados")
-    public ResponseEntity<Page<GenereResponse>> listAll(Pageable pageable) {
+    public ResponseEntity<Page<GenereResponse>> listAll(@ParameterObject Pageable pageable) {
         return ResponseEntity.ok(genereService.listAll(pageable));
     }
 

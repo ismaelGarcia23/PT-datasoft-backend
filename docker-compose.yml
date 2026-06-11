@@ -9,8 +9,8 @@ services:
       APP_USER: datasoft
       APP_USER_PASSWORD: datasoft
     volumes:
-
-      - ./db/init.sql:/container-entrypoint-initdb.d/init.sql
+      - ./db/init.sql:/container-entrypoint-initdb.d/01_init.sql
+      - ./db/seed.sql:/container-entrypoint-initdb.d/02_seed.sql
       - datasoft-db-data:/opt/oracle/oradata
     healthcheck:
       test: ["CMD", "healthcheck.sh"]
