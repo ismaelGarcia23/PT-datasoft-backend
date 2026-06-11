@@ -34,19 +34,7 @@ Espera hasta ver el mensaje `DATABASE IS READY TO USE!`.
 
 ## 2. Correr el proyecto
 
-Una vez que el contenedor esté saludable, levanta la aplicación con Maven.
-
-En Linux/Mac:
-
-```bash
-./mvnw spring-boot:run
-```
-
-En Windows:
-
-```cmd
-mvnw.cmd spring-boot:run
-```
+Acceder a la carpeta main/java y luego saldra el archivo "PruebaTecnicaAplication" dar clic al boton de play y correra el proyecto
 
 La API quedará disponible en `http://localhost:8080`.
 
